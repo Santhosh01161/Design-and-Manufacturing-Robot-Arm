@@ -1,0 +1,146 @@
+' ******************************************************************************
+' swxJRNL.swj - journal recorded on 02/13/19 by Minoru Jayakody
+' *****************************************************************************
+Dim swApp As Object
+
+Dim Part As Object
+Dim boolstatus As Boolean
+Dim longstatus As Long, longwarnings As Long
+
+Sub main()
+
+Set swApp = Application.SldWorks
+
+swApp.ActivateDoc2 "Grip Crank", False, longstatus
+Set Part = swApp.ActiveDoc
+Set Part = swApp.ActiveDoc
+Dim myModelView As Object
+Set myModelView = Part.ActiveView
+myModelView.FrameLeft = 0
+myModelView.FrameTop = 0
+Set myModelView = Part.ActiveView
+myModelView.FrameState = swWindowState_e.swWindowMaximized
+Set myModelView = Part.ActiveView
+myModelView.FrameState = swWindowState_e.swWindowMaximized
+
+' Redraw
+Part.GraphicsRedraw2
+
+' Close Document
+swPart = Nothing
+Set Part = Nothing
+swApp.CloseDoc "Grip Crank"
+swApp.ActivateDoc2 "Robot Arm (Gripper)", False, longstatus
+Set Part = swApp.ActiveDoc
+Set Part = swApp.ActiveDoc
+Set myModelView = Part.ActiveView
+myModelView.FrameLeft = 0
+myModelView.FrameTop = 0
+Set myModelView = Part.ActiveView
+myModelView.FrameState = swWindowState_e.swWindowMaximized
+Set myModelView = Part.ActiveView
+myModelView.FrameState = swWindowState_e.swWindowMaximized
+
+' Zoom In/Out (MouseWheel)
+Dim swModelView As Object
+Set swModelView = Part.ActiveView
+swModelView.Scale2 = 0.46786013568741341
+Dim swTranslation() As Double
+ReDim swTranslation(0 To 2) As Double
+swTranslation(0) = 0.070347888965834049
+swTranslation(1) = -0.048936974020892803
+swTranslation(2) = -0.07175263385057172
+Dim swTranslationVar As Variant
+swTranslationVar = swTranslation
+Dim swMathUtils As Object
+Set swMathUtils = swApp.GetMathUtility()
+Dim swTranslationVector As MathVector
+Set swTranslationVector = swMathUtils.CreateVector((swTranslationVar))
+swModelView.Translation3 = swTranslationVector
+
+' Zoom In/Out (MouseWheel)
+Set swModelView = Part.ActiveView
+swModelView.Scale2 = 0.38988344640617784
+ReDim swTranslation(0 To 2) As Double
+swTranslation(0) = 0.068102385807750215
+swTranslation(1) = -0.04078081168407733
+swTranslation(2) = -0.059793861542143084
+swTranslationVar = swTranslation
+Set swMathUtils = swApp.GetMathUtility()
+Set swTranslationVector = swMathUtils.CreateVector((swTranslationVar))
+swModelView.Translation3 = swTranslationVector
+
+' Zoom In/Out (MouseWheel)
+Set swModelView = Part.ActiveView
+swModelView.Scale2 = 0.32490287200514822
+ReDim swTranslation(0 To 2) As Double
+swTranslation(0) = 0.066231133176013687
+swTranslation(1) = -0.033984009736731116
+swTranslation(2) = -0.049828217951785915
+swTranslationVar = swTranslation
+Set swMathUtils = swApp.GetMathUtility()
+Set swTranslationVector = swMathUtils.CreateVector((swTranslationVar))
+swModelView.Translation3 = swTranslationVector
+
+' Zoom In/Out (MouseWheel)
+Set swModelView = Part.ActiveView
+swModelView.Scale2 = 0.39144924337969672
+ReDim swTranslation(0 To 2) As Double
+swTranslation(0) = 0.066907959308763434
+swTranslation(1) = -0.045187551822041427
+swTranslation(2) = -0.060033997532272183
+swTranslationVar = swTranslation
+Set swMathUtils = swApp.GetMathUtility()
+Set swTranslationVector = swMathUtils.CreateVector((swTranslationVar))
+swModelView.Translation3 = swTranslationVector
+
+' Zoom In/Out (MouseWheel)
+Set swModelView = Part.ActiveView
+swModelView.Scale2 = 0.47162559443336954
+ReDim swTranslation(0 To 2) As Double
+swTranslation(0) = 0.067723412480751088
+swTranslation(1) = -0.05868579529831891
+swTranslation(2) = -0.072330117508761671
+swTranslationVar = swTranslation
+Set swMathUtils = swApp.GetMathUtility()
+Set swTranslationVector = swMathUtils.CreateVector((swTranslationVar))
+swModelView.Translation3 = swTranslationVector
+
+' Zoom In/Out (MouseWheel)
+Set swModelView = Part.ActiveView
+swModelView.Scale2 = 0.56822360775104774
+ReDim swTranslation(0 To 2) As Double
+swTranslation(0) = 0.068705886181940998
+swTranslation(1) = -0.074948739245641188
+swTranslation(2) = -0.087144719890074329
+swTranslationVar = swTranslation
+Set swMathUtils = swApp.GetMathUtility()
+Set swTranslationVector = swMathUtils.CreateVector((swTranslationVar))
+swModelView.Translation3 = swTranslationVector
+
+' Zoom In/Out (MouseWheel)
+Set swModelView = Part.ActiveView
+swModelView.Scale2 = 0.68460675632656365
+ReDim swTranslation(0 To 2) As Double
+swTranslation(0) = 0.06988958943638672
+swTranslation(1) = -0.094542647615909026
+swTranslation(2) = -0.10499363842177632
+swTranslationVar = swTranslation
+Set swMathUtils = swApp.GetMathUtility()
+Set swTranslationVector = swMathUtils.CreateVector((swTranslationVar))
+swModelView.Translation3 = swTranslationVector
+' MSGBOX
+' Save changes to Robot Arm (Gripper)?
+
+
+' Save
+Dim swErrors As Long
+Dim swWarnings As Long
+boolstatus = Part.Save3(1, swErrors, swWarnings)
+
+' Close Document
+swAssembly = Nothing
+Set Part = Nothing
+swApp.CloseDoc "Robot Arm (Gripper)"
+swApp.ExitApp
+End Sub

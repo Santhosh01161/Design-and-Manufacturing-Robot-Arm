@@ -1,0 +1,462 @@
+' ******************************************************************************
+' swxJRNL.swj - journal recorded on 03/21/19 by Minoru Jayakody
+' *****************************************************************************
+Dim swApp As Object
+
+Dim Part As Object
+Dim boolstatus As Boolean
+Dim longstatus As Long, longwarnings As Long
+
+Sub main()
+
+Set swApp = Application.SldWorks
+
+swApp.ActivateDoc2 "LevelBar200(Lower)", False, longstatus
+Set Part = swApp.ActiveDoc
+Set Part = swApp.ActiveDoc
+Dim myModelView As Object
+Set myModelView = Part.ActiveView
+myModelView.FrameLeft = 0
+myModelView.FrameTop = 0
+Set myModelView = Part.ActiveView
+myModelView.FrameState = swWindowState_e.swWindowMaximized
+Set myModelView = Part.ActiveView
+myModelView.FrameState = swWindowState_e.swWindowMaximized
+
+' Zoom In/Out (MouseWheel)
+Dim swModelView As Object
+Set swModelView = Part.ActiveView
+swModelView.Scale2 = 1.0580429695734337
+Dim swTranslation() As Double
+ReDim swTranslation(0 To 2) As Double
+swTranslation(0) = 0.051885846331600219
+swTranslation(1) = -0.00086393526538549508
+swTranslation(2) = -0.00061079520519325184
+Dim swTranslationVar As Variant
+swTranslationVar = swTranslation
+Dim swMathUtils As Object
+Set swMathUtils = swApp.GetMathUtility()
+Dim swTranslationVector As MathVector
+Set swTranslationVector = swMathUtils.CreateVector((swTranslationVar))
+swModelView.Translation3 = swTranslationVector
+
+' Zoom In/Out (MouseWheel)
+Set swModelView = Part.ActiveView
+swModelView.Scale2 = 0.88170247464452811
+ReDim swTranslation(0 To 2) As Double
+swTranslation(0) = 0.052405536298863853
+swTranslation(1) = -0.00071994605448789831
+swTranslation(2) = -0.00050899600432770991
+swTranslationVar = swTranslation
+Set swMathUtils = swApp.GetMathUtility()
+Set swTranslationVector = swMathUtils.CreateVector((swTranslationVar))
+swModelView.Translation3 = swTranslationVector
+
+' Zoom In/Out (MouseWheel)
+Set swModelView = Part.ActiveView
+swModelView.Scale2 = 0.73475206220377343
+ReDim swTranslation(0 To 2) As Double
+swTranslation(0) = 0.052838611271583534
+swTranslation(1) = -0.00059995504540659612
+swTranslation(2) = -0.00042416333693975829
+swTranslationVar = swTranslation
+Set swMathUtils = swApp.GetMathUtility()
+Set swTranslationVector = swMathUtils.CreateVector((swTranslationVar))
+swModelView.Translation3 = swTranslationVector
+
+' Zoom In/Out (MouseWheel)
+Set swModelView = Part.ActiveView
+swModelView.Scale2 = 0.61229338516981124
+ReDim swTranslation(0 To 2) As Double
+swTranslation(0) = 0.053199507082183267
+swTranslation(1) = -0.00049996253783882302
+swTranslation(2) = -0.00035346944744979859
+swTranslationVar = swTranslation
+Set swMathUtils = swApp.GetMathUtility()
+Set swTranslationVector = swMathUtils.CreateVector((swTranslationVar))
+swModelView.Translation3 = swTranslationVector
+
+' Zoom In/Out (MouseWheel)
+Set swModelView = Part.ActiveView
+swModelView.Scale2 = 0.51024448764150943
+ReDim swTranslation(0 To 2) As Double
+swTranslation(0) = 0.053500253591016393
+swTranslation(1) = -0.00041663544819902981
+swTranslation(2) = -0.00029455787287483223
+swTranslationVar = swTranslation
+Set swMathUtils = swApp.GetMathUtility()
+Set swTranslationVector = swMathUtils.CreateVector((swTranslationVar))
+swModelView.Translation3 = swTranslationVector
+
+' Named View
+Part.ShowNamedView2 "*Isometric", 7
+Part.ViewZoomtofit2
+
+' New Document
+Dim swSheetWidth As Double
+swSheetWidth = 0.29699999999999999
+Dim swSheetHeight As Double
+swSheetHeight = 0.20999999999999999
+Set Part = swApp.NewDocument("C:\ProgramData\SolidWorks\SOLIDWORKS 2017\templates\Drawing.drwdot", 12, swSheetWidth, swSheetHeight)
+Dim swDrawing As DrawingDoc
+Set swDrawing = Part
+Set swDrawing = Part
+Dim swSheet As sheet
+Set swSheet = swDrawing.GetCurrentSheet()
+swSheet.SetProperties2 12, 12, 2, 1, False, swSheetWidth, swSheetHeight, True
+swSheet.SetTemplateName "e:\year 2\mechatronic project\group 7 robot arm design\template\a4_detail_land_sf- iso.slddrt"
+swSheet.ReloadTemplate True
+boolstatus = Part.GenerateViewPaletteViews("E:\Year 2\Mechatronic Project\Group 7 Robot Arm Design\Robot Arm (Body) Parts\LevelBar200(Lower).SLDPRT")
+Dim myView As Object
+Set myView = Part.CreateDrawViewFromModelView3("E:\Year 2\Mechatronic Project\Group 7 Robot Arm Design\Robot Arm (Body) Parts\LevelBar200(Lower).SLDPRT", "*Front", 0.094078481012658199, 0.094348101265822784, 0)
+boolstatus = Part.Extension.SelectByID2("Drawing View11", "DRAWINGVIEW", 0, 0, 0, False, 0, Nothing, 0)
+boolstatus = Part.ActivateView("Drawing View11")
+Set myView = Part.CreateUnfoldedViewAt3(0.094078481012658199, 0.13192025316455694, 0, False)
+Part.ClearSelection2 True
+boolstatus = Part.Extension.SelectByID2("Drawing View11", "DRAWINGVIEW", 0, 0, 0, False, 0, Nothing, 0)
+Part.ClearSelection2 True
+Set myView = Part.CreateDrawViewFromModelView3("E:\Year 2\Mechatronic Project\Group 7 Robot Arm Design\Robot Arm (Body) Parts\LevelBar200(Lower).SLDPRT", "*Isometric", 0.22151392405063286, 0.14818860759493668, 0)
+boolstatus = Part.ActivateView("Drawing View13")
+Part.ClearSelection2 True
+boolstatus = Part.ActivateSheet("Sheet1")
+boolstatus = Part.ActivateView("Drawing View12")
+boolstatus = Part.Extension.SelectByRay(0.044938846118697959, 0.13089425277567379, -499.99900000000002, 0, 0, -1, 0.00053189887391105728, 1, False, 0, 0)
+boolstatus = Part.Extension.SelectByRay(0.14568675047126295, 0.13120713446620971, -499.99900000000002, 0, 0, -1, 0.00053189887391105728, 1, True, 0, 0)
+Dim myDisplayDim As Object
+Set myDisplayDim = Part.AddDimension2(0.097815851819267774, 0.11892025316455695, 0)
+Part.ClearSelection2 True
+boolstatus = Part.Extension.SelectByRay(0.045564609499769787, 0.13136357531147766, -499.99900000000002, 0, 0, -1, 0.00053189887391105728, 1, False, 0, 0)
+boolstatus = Part.DeSelectByID("", "EDGE", 0.045564609499769787, 0.13136357531147766, -499.99900000000002)
+boolstatus = Part.ActivateSheet("Sheet1")
+boolstatus = Part.Extension.SelectByRay(0.045564609499769787, 0.1319893386925495, -499.99900000000002, 0, 0, -1, 0.00053189887391105728, 1, False, 0, 0)
+Set myDisplayDim = Part.AddHoleCallout2(0.069343617980499414, 0.14716410068703289, 0)
+boolstatus = Part.ActivateView("Drawing View12")
+boolstatus = Part.EditDimensionProperties2(0, 0, 0, "", "", True, 9, 0, True, 12, 12, "<NUM_INST> x <MOD-DIAM> <hw-diam> <hw-thru>", "", False, "", "", False)
+Part.ClearSelection2 True
+boolstatus = Part.ActivateView("Drawing View11")
+boolstatus = Part.Extension.SelectByRay(0.11518078564401113, 0.093504890756631848, -499.99400000000003, 0, 0, -1, 0.00053189887391105728, 1, False, 0, 0)
+Set myDisplayDim = Part.AddDimension2(0.10047534618882306, 0.083649117508241916, 0)
+Part.ClearSelection2 True
+boolstatus = Part.ActivateSheet("Sheet1")
+boolstatus = Part.ActivateView("Drawing View12")
+boolstatus = Part.ActivateView("Drawing View11")
+boolstatus = Part.ActivateSheet("Sheet1")
+boolstatus = Part.ActivateView("Drawing View11")
+boolstatus = Part.ActivateSheet("Sheet1")
+Part.ClearSelection2 True
+boolstatus = Part.ActivateView("Drawing View12")
+boolstatus = Part.Extension.SelectByRay(0.1494419152196946, 0.133366067642709, -499.99900000000002, 0, 0, -1, 0.00077869605056456008, 1, False, 0, 0)
+Part.ClearSelection2 True
+boolstatus = Part.ActivateView("Drawing View13")
+boolstatus = Part.ActivateSheet("Sheet1")
+boolstatus = Part.ActivateView("Drawing View12")
+boolstatus = Part.Extension.SelectByRay(0.14921288696952856, 0.13153384164138063, -499.99900000000002, 0, 0, -1, 0.00077869605056456008, 1, False, 0, 0)
+Set myDisplayDim = Part.AddDimension2(0.15814498872600438, 0.14000788690101584, 0)
+Part.ClearSelection2 True
+boolstatus = Part.ActivateView("Drawing View11")
+boolstatus = Part.Extension.SelectByRay(0.14930177006136283, 0.094438257336404305, -499.99400000000003, 0, 0, -1, 0.00041227723604199146, 1, False, 0, 0)
+Set myDisplayDim = Part.AddDimension2(0.1579110888140044, 0.098682287710916222, 0)
+Part.ClearSelection2 True
+boolstatus = Part.ActivateSheet("Sheet1")
+Part.ClearSelection2 True
+boolstatus = Part.Extension.SelectByID2("Sheet1", "SHEET", 0.22566604907230065, 0.10833737357348941, 0, False, 0, Nothing, 0)
+
+' Zoom To Fit
+Part.ViewZoomtofit2
+
+' Zoom To Fit
+Part.ViewZoomtofit2
+
+' Zoom To Fit
+Part.ViewZoomtofit2
+
+' Save As
+longstatus = Part.SaveAs3("E:\Year 2\Mechatronic Project\Group 7 Robot Arm Design\Robot Arm (Detail Drawings)\LevelBar200(Lower).SLDDRW", 0, 2)
+Part.ClearSelection2 True
+
+' Close Document
+Set swDrawing = Nothing
+Set Part = Nothing
+swApp.CloseDoc "LevelBar200(Lower) - Sheet1"
+Set Part = swApp.ActiveDoc
+Set myModelView = Part.ActiveView
+myModelView.FrameLeft = 0
+myModelView.FrameTop = 0
+Set myModelView = Part.ActiveView
+myModelView.FrameState = swWindowState_e.swWindowMaximized
+swApp.ActivateDoc2 "LevelBar200(Lower)", False, longstatus
+Set Part = swApp.ActiveDoc
+
+' Redraw
+Part.GraphicsRedraw2
+
+' Close Document
+swPart = Nothing
+Set Part = Nothing
+swApp.CloseDoc "LevelBar200(Lower)"
+swApp.ActivateDoc2 "LevelBar200.18723(Upper)", False, longstatus
+Set Part = swApp.ActiveDoc
+Set Part = swApp.ActiveDoc
+Set myModelView = Part.ActiveView
+myModelView.FrameLeft = 0
+myModelView.FrameTop = 0
+Set myModelView = Part.ActiveView
+myModelView.FrameState = swWindowState_e.swWindowMaximized
+Set myModelView = Part.ActiveView
+myModelView.FrameState = swWindowState_e.swWindowMaximized
+
+' New Document
+swSheetWidth = 0.29699999999999999
+swSheetHeight = 0.20999999999999999
+Set Part = swApp.NewDocument("C:\ProgramData\SolidWorks\SOLIDWORKS 2017\templates\Drawing.drwdot", 12, swSheetWidth, swSheetHeight)
+Set swDrawing = Part
+Set swDrawing = Part
+Set swSheet = swDrawing.GetCurrentSheet()
+swSheet.SetProperties2 12, 12, 2, 1, False, swSheetWidth, swSheetHeight, True
+swSheet.SetTemplateName "e:\year 2\mechatronic project\group 7 robot arm design\template\a4_detail_land_sf- iso.slddrt"
+swSheet.ReloadTemplate True
+boolstatus = Part.GenerateViewPaletteViews("E:\Year 2\Mechatronic Project\Group 7 Robot Arm Design\Robot Arm (Body) Parts\LevelBar200.18723(Upper).SLDPRT")
+Set myView = Part.CreateDrawViewFromModelView3("E:\Year 2\Mechatronic Project\Group 7 Robot Arm Design\Robot Arm (Body) Parts\LevelBar200.18723(Upper).SLDPRT", "*Front", 0.10143797468354426, 0.091636708860759489, 0)
+boolstatus = Part.Extension.SelectByID2("Drawing View11", "DRAWINGVIEW", 0, 0, 0, False, 0, Nothing, 0)
+boolstatus = Part.ActivateView("Drawing View11")
+Set myView = Part.CreateUnfoldedViewAt3(0.10143797468354426, 0.13308227848101264, 0, False)
+Part.ClearSelection2 True
+boolstatus = Part.Extension.SelectByID2("Drawing View11", "DRAWINGVIEW", 0, 0, 0, False, 0, Nothing, 0)
+Part.ClearSelection2 True
+Set myView = Part.CreateDrawViewFromModelView3("E:\Year 2\Mechatronic Project\Group 7 Robot Arm Design\Robot Arm (Body) Parts\LevelBar200.18723(Upper).SLDPRT", "*Isometric", 0.22654936708860751, 0.15322405063291136, 0)
+boolstatus = Part.ActivateView("Drawing View13")
+Part.ClearSelection2 True
+boolstatus = Part.ActivateView("Drawing View12")
+boolstatus = Part.Extension.SelectByRay(0.053047671688286502, 0.13264301801137904, -499.99900000000002, 0, 0, -1, 0.00048600391592489218, 1, False, 0, 0)
+boolstatus = Part.Extension.SelectByRay(0.1515349358271838, 0.1316424217138866, -499.99900000000002, 0, 0, -1, 0.00048600391592489218, 1, True, 0, 0)
+Set myDisplayDim = Part.AddDimension2(0.10036158232685689, 0.11849172752176333, 0)
+Part.ClearSelection2 True
+boolstatus = Part.EditDimensionProperties2(0, 0, 0, "", "", False, 4, 2, True, 12, 12, "", "", True, "", "", False)
+boolstatus = Part.EditDimensionProperties2(0, 0, 0, "", "", False, 3, 2, True, 12, 12, "", "", True, "", "", False)
+boolstatus = Part.EditDimensionProperties2(0, 0, 0, "", "", False, 3, 2, True, 12, 12, "", "", True, "", "", False)
+boolstatus = Part.ActivateSheet("Sheet1")
+Part.ClearSelection2 True
+boolstatus = Part.ActivateView("Drawing View12")
+boolstatus = Part.ActivateSheet("Sheet1")
+boolstatus = Part.ActivateView("Drawing View12")
+boolstatus = Part.Extension.SelectByRay(0.046778202201035526, 0.13242327467311218, -499.99900000000002, 0, 0, -1, 0.00057848086719875988, 1, False, 0, 0)
+Set myDisplayDim = Part.AddDimension2(0.034017594836356996, 0.12612804171002889, 0)
+Part.ClearSelection2 True
+boolstatus = Part.ActivateSheet("Sheet1")
+boolstatus = Part.ActivateView("Drawing View12")
+boolstatus = Part.ActivateView("Drawing View11")
+boolstatus = Part.ActivateSheet("Sheet1")
+boolstatus = Part.ActivateView("Drawing View11")
+boolstatus = Part.Extension.SelectByRay(0.11559805444848098, 0.090563651715607166, -499.99400000000003, 0, 0, -1, 0.00066407242408020881, 1, False, 0, 0)
+Set myDisplayDim = Part.AddDimension2(0.11520742361078673, 0.087438605017544677, 0)
+Part.ClearSelection2 True
+boolstatus = Part.Extension.SelectByID2("RD1@Drawing View11", "DIMENSION", 0.11442616193539826, 0.088024551274086038, 0, False, 0, Nothing, 0)
+boolstatus = Part.Extension.SelectByRay(0.15646682924151589, 0.091886118222567023, -499.99400000000003, 0, 0, -1, 0.00012175346757251417, 1, False, 0, 0)
+Set myDisplayDim = Part.AddDimension2(0.16087143998016862, 0.095610341940041241, 0)
+Part.ClearSelection2 True
+boolstatus = Part.ActivateSheet("Sheet1")
+boolstatus = Part.ActivateView("Drawing View11")
+boolstatus = Part.ActivateSheet("Sheet1")
+boolstatus = Part.ActivateView("Drawing View12")
+boolstatus = Part.ActivateSheet("Sheet1")
+boolstatus = Part.Extension.SelectByRay(0.051960551547365535, 0.1344598708682698, -499.99900000000002, 0, 0, -1, 0.00074295645530848495, 1, False, 0, 0)
+boolstatus = Part.ActivateView("Drawing View11")
+Set myDisplayDim = Part.AddHoleCallout2(0.077526994274157518, 0.14975603318693595, 0)
+boolstatus = Part.ActivateView("Drawing View12")
+boolstatus = Part.EditDimensionProperties2(0, 0, 0, "", "", True, 9, 0, True, 12, 12, "<NUM_INST> x <MOD-DIAM> <hw-diam> <hw-thru>", "", False, "", "", False)
+Part.ClearSelection2 True
+
+' Zoom To Fit
+Part.ViewZoomtofit2
+
+' Zoom To Fit
+Part.ViewZoomtofit2
+
+' Zoom To Fit
+Part.ViewZoomtofit2
+
+' Save As
+longstatus = Part.SaveAs3("E:\Year 2\Mechatronic Project\Group 7 Robot Arm Design\Robot Arm (Detail Drawings)\LevelBar200.18723(Upper).SLDDRW", 0, 2)
+
+' Close Document
+Set swDrawing = Nothing
+Set Part = Nothing
+swApp.CloseDoc "LevelBar200.18723(Upper) - Sheet1"
+Set Part = swApp.ActiveDoc
+Set myModelView = Part.ActiveView
+myModelView.FrameLeft = 0
+myModelView.FrameTop = 0
+Set myModelView = Part.ActiveView
+myModelView.FrameState = swWindowState_e.swWindowMaximized
+swApp.ActivateDoc2 "LevelBar200.18723(Upper)", False, longstatus
+Set Part = swApp.ActiveDoc
+
+' Redraw
+Part.GraphicsRedraw2
+
+' Close Document
+swPart = Nothing
+Set Part = Nothing
+swApp.CloseDoc "LevelBar200.18723(Upper)"
+swApp.ActivateDoc2 "Triangles", False, longstatus
+Set Part = swApp.ActiveDoc
+Set Part = swApp.ActiveDoc
+Set myModelView = Part.ActiveView
+myModelView.FrameLeft = 0
+myModelView.FrameTop = 0
+Set myModelView = Part.ActiveView
+myModelView.FrameState = swWindowState_e.swWindowMaximized
+Set myModelView = Part.ActiveView
+myModelView.FrameState = swWindowState_e.swWindowMaximized
+
+' Named View
+Part.ShowNamedView2 "*Isometric", 7
+Part.ViewZoomtofit2
+boolstatus = Part.Extension.SelectByID2("Sketch1", "SKETCH", 0, 0, 0, False, 0, Nothing, 0)
+Part.BlankSketch
+
+' New Document
+swSheetWidth = 0.29699999999999999
+swSheetHeight = 0.20999999999999999
+Set Part = swApp.NewDocument("C:\ProgramData\SolidWorks\SOLIDWORKS 2017\templates\Drawing.drwdot", 12, swSheetWidth, swSheetHeight)
+Set swDrawing = Part
+Set swDrawing = Part
+Set swSheet = swDrawing.GetCurrentSheet()
+swSheet.SetProperties2 12, 12, 2, 1, False, swSheetWidth, swSheetHeight, True
+swSheet.SetTemplateName "e:\year 2\mechatronic project\group 7 robot arm design\template\a4_detail_land_sf- iso.slddrt"
+swSheet.ReloadTemplate True
+boolstatus = Part.GenerateViewPaletteViews("E:\Year 2\Mechatronic Project\Group 7 Robot Arm Design\Robot Arm (Body) Parts\Triangles.SLDPRT")
+Set myView = Part.CreateDrawViewFromModelView3("E:\Year 2\Mechatronic Project\Group 7 Robot Arm Design\Robot Arm (Body) Parts\Triangles.SLDPRT", "*Front", 0.08207088607594934, 0.10054556962025316, 0)
+boolstatus = Part.Extension.SelectByID2("Drawing View11", "DRAWINGVIEW", 0, 0, 0, False, 0, Nothing, 0)
+boolstatus = Part.ActivateView("Drawing View11")
+Set myView = Part.CreateUnfoldedViewAt3(0.08207088607594934, 0.15942151898734175, 0, False)
+Part.ClearSelection2 True
+boolstatus = Part.Extension.SelectByID2("Drawing View11", "DRAWINGVIEW", 0, 0, 0, False, 0, Nothing, 0)
+Part.ClearSelection2 True
+Set myView = Part.CreateDrawViewFromModelView3("E:\Year 2\Mechatronic Project\Group 7 Robot Arm Design\Robot Arm (Body) Parts\Triangles.SLDPRT", "*Isometric", 0.23429620253164551, 0.1400544303797468, 0)
+boolstatus = Part.ActivateView("Drawing View13")
+boolstatus = Part.ActivateSheet("Sheet1")
+boolstatus = Part.Extension.SelectByID2("Sheet1", "SHEET", 0.01699746835443039, 0.094348101265822784, 0, False, 0, Nothing, 0)
+Part.ClearSelection2 True
+boolstatus = Part.ActivateView("Drawing View11")
+boolstatus = Part.Extension.SelectByRay(0.10768938583203397, 0.1099863349598361, 250.001, 0, 0, -1, 0.00093738755674059788, 1, False, 0, 0)
+boolstatus = Part.Extension.SelectByRay(0.11017070583517083, 0.071388023799929132, 250.001, 0, 0, -1, 0.00093738755674059788, 1, True, 0, 0)
+Set myDisplayDim = Part.AddDimension2(0.14524245895120316, 0.093168499381273751, 0)
+Part.ClearSelection2 True
+boolstatus = Part.ActivateSheet("Sheet1")
+boolstatus = Part.ActivateView("Drawing View11")
+boolstatus = Part.Extension.SelectByRay(0.068263968004414699, 0.071388023799929132, 250.001, 0, 0, -1, 0.00093738755674059788, 1, False, 0, 0)
+boolstatus = Part.Extension.SelectByRay(0.10603517249660938, 0.070285214909646079, 250.001, 0, 0, -1, 0.00093738755674059788, 1, True, 0, 0)
+Set myDisplayDim = Part.AddDimension2(0.086736016916655889, 0.052088868218229889, 0)
+Part.ClearSelection2 True
+boolstatus = Part.ActivateSheet("Sheet1")
+boolstatus = Part.ActivateView("Drawing View11")
+boolstatus = Part.Extension.SelectByRay(0.090595848032646586, 0.06504687268080156, 250.001, 0, 0, -1, 0.00093738755674059788, 1, False, 0, 0)
+Set myDisplayDim = Part.AddDimension2(0.090044443587505074, 0.044093503763677738, 0)
+Part.ClearSelection2 True
+boolstatus = Part.ActivateSheet("Sheet1")
+boolstatus = Part.ActivateView("Drawing View11")
+boolstatus = Part.Extension.SelectByRay(0.11733896362201071, 0.095374117163585612, 250.001, 0, 0, -1, 0.00093738755674059788, 1, False, 0, 0)
+Set myDisplayDim = Part.AddDimension2(0.15455876366906385, 0.09289279715870298, 0)
+Part.ClearSelection2 True
+boolstatus = Part.ActivateSheet("Sheet1")
+boolstatus = Part.ActivateView("Drawing View11")
+boolstatus = Part.Extension.SelectByRay(0.075707928013825337, 0.098958246057005539, 250.00100000000006, 0, 0, -1, 0.00093738755674059788, 1, False, 0, 0)
+boolstatus = Part.DeSelectByID("", "EDGE", 0.075707928013825337, 0.098958246057005539, 250.00100000000006)
+boolstatus = Part.ActivateSheet("Sheet1")
+boolstatus = Part.ActivateView("Drawing View12")
+boolstatus = Part.ActivateSheet("Sheet1")
+boolstatus = Part.ActivateView("Drawing View11")
+boolstatus = Part.Extension.SelectByRay(0.11651185695429842, 0.13452383276863408, 250.001, 0, 0, -1, 0.00093738755674059788, 1, False, 0, 0)
+Set myDisplayDim = Part.AddDimension2(0.15455876366906385, 0.1555711221462848, 0)
+Part.ClearSelection2 True
+boolstatus = Part.ActivateSheet("Sheet1")
+boolstatus = Part.ActivateView("Drawing View11")
+boolstatus = Part.Extension.SelectByRay(0.047586301311607404, 0.068355299351650731, 250.001, 0, 0, -1, 0.00093738755674059788, 1, False, 0, 0)
+Set myDisplayDim = Part.AddDimension2(0.022497399057667858, 0.056500103779362112, 0)
+Part.ClearSelection2 True
+boolstatus = Part.ActivateSheet("Sheet1")
+boolstatus = Part.ActivateView("Drawing View11")
+boolstatus = Part.Extension.SelectByRay(0.11568475028658612, 0.067252490461367678, 250.001, 0, 0, -1, 0.00093738755674059788, 1, False, 0, 0)
+Set myDisplayDim = Part.AddDimension2(0.1258857325217044, 0.044920610431390035, 0)
+Part.ClearSelection2 True
+boolstatus = Part.ActivateSheet("Sheet1")
+Part.ClearSelection2 True
+boolstatus = Part.ActivateView("Drawing View11")
+boolstatus = Part.Extension.SelectByID2("RD7@Drawing View11", "DIMENSION", 0.12781564807969975, 0.043817801541106982, 0, False, 0, Nothing, 0)
+boolstatus = Part.ActivateSheet("Sheet1")
+boolstatus = Part.Extension.SelectByID2("Sheet1", "SHEET", 0.031319870179932319, 0.046574823766814599, 0, False, 0, Nothing, 0)
+boolstatus = Part.Extension.SelectByRay(0.061922816885287113, 0.076074961583632125, 250.001, 0, 0, -1, 0.00093738755674059788, 1, False, 0, 0)
+Set myDisplayDim = Part.AddHoleCallout2(0.037936723521630647, 0.10033675716811361, 0)
+boolstatus = Part.ActivateView("Drawing View11")
+boolstatus = Part.EditDimensionProperties2(0, 0, 0, "", "", True, 9, 0, True, 12, 12, "<NUM_INST> x <MOD-DIAM> <hw-diam> <hw-thru>", "", False, "", "", False)
+Part.ClearSelection2 True
+boolstatus = Part.ActivateSheet("Sheet1")
+boolstatus = Part.ActivateView("Drawing View11")
+boolstatus = Part.Extension.SelectByRay(0.10134823471290638, 0.06504687268080156, 250.001, 0, 0, -1, 0.00093738755674059788, 1, False, 0, 0)
+boolstatus = Part.Extension.SelectByRay(0.11733896362201071, 0.092341392715307197, 250.001, 0, 0, -1, 0.00093738755674059788, 1, True, 0, 0)
+Set myDisplayDim = Part.AddDimension2(0.12671283918941667, 0.092065690490990684, 0)
+Part.ClearSelection2 True
+boolstatus = Part.ActivateSheet("Sheet1")
+boolstatus = Part.ActivateSheet("Sheet1")
+Part.EditDelete
+boolstatus = Part.ActivateSheet("Sheet1")
+boolstatus = Part.Extension.SelectByRay(0.098039808042057225, 0.06504687268080156, 250.001, 0, 0, -1, 0.00093738755674059788, 1, False, 0, 0)
+boolstatus = Part.Extension.SelectByRay(0.11733896362201071, 0.092065690492736441, 250.001, 0, 0, -1, 0.00093738755674059788, 1, True, 0, 0)
+Set myDisplayDim = Part.AddDimension2(0.098591212487198737, 0.088205859374999987, 0)
+Part.ClearSelection2 True
+boolstatus = Part.ActivateSheet("Sheet1")
+Part.ClearSelection2 True
+boolstatus = Part.ActivateView("Drawing View11")
+boolstatus = Part.Extension.SelectByID2("RD9@Drawing View11", "DIMENSION", 0.096730633353432821, 0.088391773713354577, 0, False, 0, Nothing, 0)
+Part.ClearSelection2 True
+boolstatus = Part.ActivateView("Drawing View12")
+boolstatus = Part.Extension.SelectByRay(0.11746662000444211, 0.15905614060723586, 250.01558578643764, 0, 0, -1, 0.0013565747373101829, 1, False, 0, 0)
+Set myDisplayDim = Part.AddDimension2(0.12983538966815264, 0.17062692512960628, 0)
+Part.ClearSelection2 True
+boolstatus = Part.ActivateSheet("Sheet1")
+Part.ClearSelection2 True
+boolstatus = Part.ActivateView("Drawing View11")
+boolstatus = Part.Extension.SelectByID2("RD3@Drawing View11", "DIMENSION", 0.08738920137895842, 0.046232162625980386, 0, False, 0, Nothing, 0)
+boolstatus = Part.EditDimensionProperties2(0, 0, 0, "", "", False, 3, 2, True, 12, 12, "", "", True, "", "", False)
+boolstatus = Part.Extension.SelectByID2("RD4@Drawing View11", "DIMENSION", 0.15462973388147103, 0.090153587896981885, 0, False, 0, Nothing, 0)
+boolstatus = Part.EditDimensionProperties2(0, 0, 0, "", "", False, 3, 2, True, 1, 1, "", "", True, "", "", False)
+Part.ClearSelection2 True
+boolstatus = Part.ActivateSheet("Sheet1")
+boolstatus = Part.Extension.SelectByID2("Sheet1", "SHEET", 0.035996605829899934, 0.040572185142603898, 0, False, 0, Nothing, 0)
+
+' Zoom To Fit
+Part.ViewZoomtofit2
+
+' Zoom To Fit
+Part.ViewZoomtofit2
+
+' Zoom To Fit
+Part.ViewZoomtofit2
+
+' Save As
+longstatus = Part.SaveAs3("E:\Year 2\Mechatronic Project\Group 7 Robot Arm Design\Robot Arm (Detail Drawings)\Triangles.SLDDRW", 0, 2)
+Part.ClearSelection2 True
+
+' Close Document
+Set swDrawing = Nothing
+Set Part = Nothing
+swApp.CloseDoc "Triangles - Sheet1"
+Set Part = swApp.ActiveDoc
+Set myModelView = Part.ActiveView
+myModelView.FrameLeft = 0
+myModelView.FrameTop = 0
+Set myModelView = Part.ActiveView
+myModelView.FrameState = swWindowState_e.swWindowMaximized
+swApp.ActivateDoc2 "Triangles", False, longstatus
+Set Part = swApp.ActiveDoc
+
+' Redraw
+Part.GraphicsRedraw2
+
+' Close Document
+swPart = Nothing
+Set Part = Nothing
+swApp.CloseDoc "Triangles"
+swApp.ExitApp
+End Sub

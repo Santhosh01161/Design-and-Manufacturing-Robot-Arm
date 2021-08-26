@@ -1,0 +1,195 @@
+' ******************************************************************************
+' swxJRNL.swj - journal recorded on 01/30/19 by Minoru Jayakody
+' *****************************************************************************
+Dim swApp As Object
+
+Dim Part As Object
+Dim boolstatus As Boolean
+Dim longstatus As Long, longwarnings As Long
+
+Sub main()
+
+Set swApp = Application.SldWorks
+
+swApp.ActivateDoc2 "Connector 3mm - Sheet1", False, longstatus
+Set Part = swApp.ActiveDoc
+Set Part = swApp.ActiveDoc
+Dim myModelView As Object
+Set myModelView = Part.ActiveView
+myModelView.FrameLeft = 0
+myModelView.FrameTop = 0
+Set myModelView = Part.ActiveView
+myModelView.FrameState = swWindowState_e.swWindowMaximized
+Set myModelView = Part.ActiveView
+myModelView.FrameState = swWindowState_e.swWindowMaximized
+Part.PrintDirect
+
+' Close Document
+swDrawing = Nothing
+Set Part = Nothing
+swApp.CloseDoc "Connector 3mm - Sheet1"
+swApp.ActivateDoc2 "Connector 3mm - Sheet1", False, longstatus
+Set Part = swApp.ActiveDoc
+Set Part = swApp.ActiveDoc
+Set myModelView = Part.ActiveView
+myModelView.FrameLeft = 0
+myModelView.FrameTop = 0
+Set myModelView = Part.ActiveView
+myModelView.FrameState = swWindowState_e.swWindowMaximized
+Set myModelView = Part.ActiveView
+myModelView.FrameState = swWindowState_e.swWindowMaximized
+Part.PrintDirect
+
+' Close Document
+swDrawing = Nothing
+Set Part = Nothing
+swApp.CloseDoc "Connector 3mm - Sheet1"
+swApp.ActivateDoc2 "Connector 8.7 - Sheet1", False, longstatus
+Set Part = swApp.ActiveDoc
+Set Part = swApp.ActiveDoc
+Set myModelView = Part.ActiveView
+myModelView.FrameLeft = 0
+myModelView.FrameTop = 0
+Set myModelView = Part.ActiveView
+myModelView.FrameState = swWindowState_e.swWindowMaximized
+Set myModelView = Part.ActiveView
+myModelView.FrameState = swWindowState_e.swWindowMaximized
+Part.PrintDirect
+' MSGBOX
+' Save changes to Connector 8.7 - Sheet1?
+
+
+' Zoom To Fit
+Part.ViewZoomtofit2
+
+' Zoom To Fit
+Part.ViewZoomtofit2
+
+' Zoom To Fit
+Part.ViewZoomtofit2
+
+' Save
+Dim swErrors As Long
+Dim swWarnings As Long
+boolstatus = Part.Save3(1, swErrors, swWarnings)
+
+' Close Document
+swDrawing = Nothing
+Set Part = Nothing
+swApp.CloseDoc "Connector 8.7 - Sheet1"
+swApp.ActivateDoc2 "Connector 10.6 - Sheet1", False, longstatus
+Set Part = swApp.ActiveDoc
+Set Part = swApp.ActiveDoc
+Set myModelView = Part.ActiveView
+myModelView.FrameLeft = 0
+myModelView.FrameTop = 0
+Set myModelView = Part.ActiveView
+myModelView.FrameState = swWindowState_e.swWindowMaximized
+Set myModelView = Part.ActiveView
+myModelView.FrameState = swWindowState_e.swWindowMaximized
+Part.PrintDirect
+' MSGBOX
+' Save changes to Connector 10.6 - Sheet1?
+
+
+' Zoom To Fit
+Part.ViewZoomtofit2
+
+' Zoom To Fit
+Part.ViewZoomtofit2
+
+' Zoom To Fit
+Part.ViewZoomtofit2
+
+' Save
+boolstatus = Part.Save3(1, swErrors, swWarnings)
+
+' Close Document
+swDrawing = Nothing
+Set Part = Nothing
+swApp.CloseDoc "Connector 10.6 - Sheet1"
+swApp.ActivateDoc2 "Connector 10 - Sheet1", False, longstatus
+Set Part = swApp.ActiveDoc
+Set Part = swApp.ActiveDoc
+Set myModelView = Part.ActiveView
+myModelView.FrameLeft = 0
+myModelView.FrameTop = 0
+Set myModelView = Part.ActiveView
+myModelView.FrameState = swWindowState_e.swWindowMaximized
+Set myModelView = Part.ActiveView
+myModelView.FrameState = swWindowState_e.swWindowMaximized
+Part.PrintDirect
+
+' Close Document
+swDrawing = Nothing
+Set Part = Nothing
+swApp.CloseDoc "Connector 10 - Sheet1"
+swApp.ActivateDoc2 "Connector 14 - Sheet1", False, longstatus
+Set Part = swApp.ActiveDoc
+Set Part = swApp.ActiveDoc
+Set myModelView = Part.ActiveView
+myModelView.FrameLeft = 0
+myModelView.FrameTop = 0
+Set myModelView = Part.ActiveView
+myModelView.FrameState = swWindowState_e.swWindowMaximized
+Set myModelView = Part.ActiveView
+myModelView.FrameState = swWindowState_e.swWindowMaximized
+Part.PrintDirect
+
+' Close Document
+swDrawing = Nothing
+Set Part = Nothing
+swApp.CloseDoc "Connector 14 - Sheet1"
+swApp.ActivateDoc2 "Connector 15.7 - Sheet1", False, longstatus
+Set Part = swApp.ActiveDoc
+Set Part = swApp.ActiveDoc
+Set myModelView = Part.ActiveView
+myModelView.FrameLeft = 0
+myModelView.FrameTop = 0
+Set myModelView = Part.ActiveView
+myModelView.FrameState = swWindowState_e.swWindowMaximized
+Set myModelView = Part.ActiveView
+myModelView.FrameState = swWindowState_e.swWindowMaximized
+Part.PrintDirect
+
+' Close Document
+swDrawing = Nothing
+Set Part = Nothing
+swApp.CloseDoc "Connector 15.7 - Sheet1"
+swApp.ActivateDoc2 "Connector 17.8 - Sheet1", False, longstatus
+Set Part = swApp.ActiveDoc
+Set Part = swApp.ActiveDoc
+Set myModelView = Part.ActiveView
+myModelView.FrameLeft = 0
+myModelView.FrameTop = 0
+Set myModelView = Part.ActiveView
+myModelView.FrameState = swWindowState_e.swWindowMaximized
+Set myModelView = Part.ActiveView
+myModelView.FrameState = swWindowState_e.swWindowMaximized
+
+' Zoom To Fit
+Part.ViewZoomtofit2
+Part.PrintDirect
+
+' Close Document
+swDrawing = Nothing
+Set Part = Nothing
+swApp.CloseDoc "Connector 17.8 - Sheet1"
+swApp.ActivateDoc2 "Shaft - Sheet1", False, longstatus
+Set Part = swApp.ActiveDoc
+Set Part = swApp.ActiveDoc
+Set myModelView = Part.ActiveView
+myModelView.FrameLeft = 0
+myModelView.FrameTop = 0
+Set myModelView = Part.ActiveView
+myModelView.FrameState = swWindowState_e.swWindowMaximized
+Set myModelView = Part.ActiveView
+myModelView.FrameState = swWindowState_e.swWindowMaximized
+Part.PrintDirect
+
+' Close Document
+swDrawing = Nothing
+Set Part = Nothing
+swApp.CloseDoc "Shaft - Sheet1"
+swApp.ExitApp
+End Sub
